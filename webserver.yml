@@ -1,0 +1,21 @@
+---
+- name: setup webserver
+  hosts: all
+  become: true
+  tasks:
+
+    - name: httpd installed
+      ansible.builtin.apt:
+        name: apache2
+        state: latest
+        update_cache: yes
+    - name: custom index.html
+      ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        content: |
+          This server is installed by Ansible.
+    - name: httpd service enabled
+      ansible.builtin.service:
+        name: apache2
+        enabled: true
+        state: started
