@@ -1,6 +1,6 @@
 - name: httpd installed
       ansible.builtin.apt:
-        name: apache2
+        name: httpd
         state: latest
         update_cache: yes
     - name: custom index.html
@@ -10,6 +10,6 @@
           This server is installed by Ansible.
     - name: httpd service enabled
       ansible.builtin.service:
-        name: apache2
+        name: httpd
         enabled: true
         state: started
