@@ -1,15 +1,15 @@
 - name: httpd installed
-      ansible.builtin.apt:
-        name: httpd
-        state: latest
-        update_cache: yes
-    - name: custom index.html
-      ansible.builtin.copy:
-        dest: /var/www/html/index.html
-        content: |
-          This server is installed by Ansible.
-    - name: httpd service enabled
-      ansible.builtin.service:
-        name: httpd
-        enabled: true
-        state: started
+  apt: name={{item}}
+  with_items:
+    - apache2
+
+- name: custom index.html
+  ansible.builtin.copy:
+    dest: /var/www/html/index.html
+    content: |
+      This server is installed by Ansible.
+- name: httpd service enabled
+  ansible.builtin.service:
+    name: apache2
+    enabled: true
+    state: started
