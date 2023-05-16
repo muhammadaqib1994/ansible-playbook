@@ -1,10 +1,4 @@
----
-- name: setup webserver
-  hosts: all
-  become: true
-  tasks:
-
-    - name: httpd installed
+- name: httpd installed
       ansible.builtin.apt:
         name: apache2
         state: latest
