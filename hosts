@@ -1,0 +1,2 @@
+[ansible_server]
+ansble_pull_server ansible_hosts=172.31.10.176
