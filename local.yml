@@ -1,5 +1,5 @@
 ---
-- hosts: ansible_servers
+- hosts: all
   become: true
   pre_tasks:
     - name: update repositories
