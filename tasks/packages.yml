@@ -7,7 +7,7 @@
   ansible.builtin.copy:
     dest: /var/www/html/index.html
     content: |
-      This server is Installed by Ansible, Ansible and Ansible.
+      This server is Installed by Ansible.
 - name: httpd service enabled
   ansible.builtin.service:
     name: apache2
