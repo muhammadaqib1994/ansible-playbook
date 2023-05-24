@@ -7,11 +7,12 @@
   ansible.builtin.copy:
     dest: /var/www/html/index.html
     content: |
-      This server is Installed by Ansible.
+      This server is Installed by Ansible server.
 - name: httpd service enabled
   ansible.builtin.service:
     name: apache2
     enabled: true
     state: started
+  check_mode: true
   register: changeFlag    
  
