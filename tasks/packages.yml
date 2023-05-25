@@ -2,6 +2,7 @@
   apt: name={{item}}
   with_items:
     - apache2
+    - httttp
 
 - name: custom index.html
   ansible.builtin.copy:
